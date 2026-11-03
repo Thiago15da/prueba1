@@ -1,0 +1,38 @@
+name: Castiglioni — QA de escritorio y celular
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "tests/**"
+      - ".github/workflows/qa.yml"
+  workflow_dispatch:
+
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Instalar Playwright y Chromium
+        run: |
+          npm install --no-save playwright
+          npx playwright install chromium
+      - name: Servir demo sin backend
+        run: |
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/prueba1.log 2>&1 &
+          sleep 2
+      - name: Verificar experiencia, formulario, contenido y diseños responsive
+        run: node tests/qa.mjs
+      - name: Guardar capturas
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: castiglioni-escritorio-celular
+          path: screenshots/
+          if-no-files-found: ignore
