@@ -1,8 +1,5 @@
-name: Castiglioni — Publicar propuesta
+name: Castiglioni — Publicar al habilitar Pages
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -25,7 +22,6 @@ jobs:
       - name: Habilitar GitHub Pages con GitHub Actions
         uses: actions/configure-pages@v5
         with:
-          enablement: true
       - name: Empaquetar propuesta
         uses: actions/upload-pages-artifact@v3
         with:
