@@ -29,6 +29,7 @@ Fuentes oficiales:
 - `assets/style.css` — sistema visual, tipografía, responsive y accesibilidad.
 - `assets/app.js` — navegación móvil, preguntas y formulario.
 - `tests/qa.mjs` + GitHub Actions — comprobaciones funcionales y visuales.
+- Las fotografías de los socios no pudieron recuperarse desde la web oficial durante la preparación de la demo. Se presentan sus iniciales en lugar de fotografías falsas.
 
 Se usan imágenes arquitectónicas genéricas identificadas como **ilustrativas**. La demo incluye `noindex,nofollow` para evitar confusión con el sitio oficial.
 
@@ -36,3 +37,9 @@ Se usan imágenes arquitectónicas genéricas identificadas como **ilustrativas*
 Confirmar con la firma el uso de logo e imágenes oficiales, biografías completas, alcance de los servicios, privacidad de datos, consentimiento y destino de formularios. Reemplazar las imágenes ilustrativas, añadir política de privacidad, activar backend real y revisar SEO/dominio tras aprobación.
 
 Esta versión no realiza captación automática de datos, no envía mensajes sin intervención del visitante y no promete resultados jurídicos.
+
+## Vista previa y publicación
+
+La versión fuente está en **Thiago15da/prueba1**. Como este repositorio nuevo no tenía GitHub Pages habilitado y la integración carece de permiso para activarlo automáticamente, existe una copia de vista previa aislada en **https://novatec.com.py/demos/castiglioni/**, sin modificar el sitio oficial de Castiglioni ni otras demos de NovaTec.
+
+Para habilitar Pages directamente en `prueba1`, su propietario debe ir a **Settings → Pages → Build and deployment → Source: GitHub Actions** y luego ejecutar manualmente el workflow **Castiglioni — Publicar al habilitar Pages**. No se volverán a iniciar despliegues fallidos automáticamente.
